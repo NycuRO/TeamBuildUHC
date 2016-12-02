@@ -183,6 +183,11 @@ class TeamBuildUHC extends PluginBase implements Listener {
                         else{
                             $event->setCancelled(false);
                         }
+			if($event->getBlock()->getID() == 20)
+			{
+				$event->setCancelled(true);
+			}
+
 		}
 	}
 	
