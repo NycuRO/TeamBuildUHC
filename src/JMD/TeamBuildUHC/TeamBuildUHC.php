@@ -42,7 +42,7 @@ class TeamBuildUHC extends PluginBase implements Listener {
 	
 	public function onEnable()
 	{
-		  $this->getLogger()->info(TextFormat::AQUA . "§6Team§2Build§cUHC §fby §bJericMinesDiamond");
+		  $this->getLogger()->info(TextFormat::AQUA . "§6Team§2Build§cUHC §fby §bJericMinesDiamond and edited by NycuRO");
 
                 $this->getServer()->getPluginManager()->registerEvents($this ,$this);
                 $this->economy = $this->getServer()->getPluginManager()->getPlugin("EconomyAPI");
@@ -109,7 +109,7 @@ class TeamBuildUHC extends PluginBase implements Listener {
             $event->setDeathMessage("");
             foreach($jugador->getLevel()->getPlayers() as $pl)
                 {
-                $pl->sendMessage(TextFormat::RED . $jugador->getNameTag() . TextFormat::YELLOW . " was killed by " . TextFormat::GREEN . $asassin->getNameTag() . TextFormat::YELLOW . ".");
+                //$pl->sendMessage(TextFormat::RED . $jugador->getNameTag() . TextFormat::YELLOW . " was killed by " . TextFormat::GREEN . $asassin->getNameTag() . TextFormat::YELLOW . ".");
                 }
         $statistic = new Config($this->getDataFolder() . "/statistic.yml", Config::YAML);
 	$stats = $statistic->get($asassin->getName());
@@ -316,7 +316,7 @@ class TeamBuildUHC extends PluginBase implements Listener {
                         case "tbuhcstart":
                             if($player->isOp())
 				{
-                                $player->sendMessage($this->prefix . "§aStarting in 5 seconds...");
+                                $player->sendMessage($this->prefix . "§aIncepe in 5 secunde...");
                                 $config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
                                 $config->set("arenas",$this->arenas);
                                 foreach($this->arenas as $arena)
@@ -422,7 +422,7 @@ class TeamBuildUHC extends PluginBase implements Listener {
                                                 $thespawn = $config->get($namemap . "Spawn1");
                                                 foreach($level->getPlayers() as $playersinarena)
                                                 {
-                                                $playersinarena->sendMessage($player->getName() . " §ejoined as Team §l§4RED");
+                                                $playersinarena->sendMessage($player->getName() . " §ea intrat in Team-ul §l§4RED");
                                                 }
 					}
                                         else if($text[1]==TextFormat::YELLOW  . "1 / 6")
@@ -430,7 +430,7 @@ class TeamBuildUHC extends PluginBase implements Listener {
                                                 $thespawn = $config->get($namemap . "Spawn2");
                                                  foreach($level->getPlayers() as $playersinarena)
                                                 {
-                                                $playersinarena->sendMessage($player->getName() . " §ejoined as Team §1§lBLUE");
+                                                $playersinarena->sendMessage($player->getName() . " §ea intrat in Team-ul §1§lBLUE");
                                                 }
 					}
                                         else if($text[1]==TextFormat::YELLOW  . "2 / 6")
@@ -438,7 +438,7 @@ class TeamBuildUHC extends PluginBase implements Listener {
                                                 $thespawn = $config->get($namemap . "Spawn3");
                                                  foreach($level->getPlayers() as $playersinarena)
                                                 {
-                                                $playersinarena->sendMessage($player->getName() . " §ejoined as Team §l§aGREEN");
+                                                $playersinarena->sendMessage($player->getName() . " §ea intrat in Team-ul §l§aGREEN");
                                                 }
 					}
                                         else if($text[1]==TextFormat::YELLOW  . "3 / 6")
@@ -446,7 +446,7 @@ class TeamBuildUHC extends PluginBase implements Listener {
                                                 $thespawn = $config->get($namemap . "Spawn4");
                                                  foreach($level->getPlayers() as $playersinarena)
                                                 {
-                                                $playersinarena->sendMessage($player->getName() . " §ejoined as Team §l§4RED");
+                                                $playersinarena->sendMessage($player->getName() . " §ea intrat in Team-ul §l§4RED");
                                                 }
 					}
                                         else if($text[1]==TextFormat::YELLOW  . "4 / 6")
@@ -454,7 +454,7 @@ class TeamBuildUHC extends PluginBase implements Listener {
                                                 $thespawn = $config->get($namemap . "Spawn5");
                                                  foreach($level->getPlayers() as $playersinarena)
                                                 {
-                                                $playersinarena->sendMessage($player->getName() . " §ejoined as Team §l§1BLUE");
+                                                $playersinarena->sendMessage($player->getName() . " §ea intrat in Team-ul §l§1BLUE");
                                                 }
 					}
                                         else if($text[1]==TextFormat::YELLOW  . "5 / 6")
@@ -462,23 +462,23 @@ class TeamBuildUHC extends PluginBase implements Listener {
                                                 $thespawn = $config->get($namemap . "Spawn6");
                                                  foreach($level->getPlayers() as $playersinarena)
                                                 {
-                                                $playersinarena->sendMessage($player->getName() . " §ejoined as Team §l§eGREEN");
+                                                $playersinarena->sendMessage($player->getName() . " §ea intrat in Team-ul §l§eGREEN");
                                                 }
 					}  
 						if($rank == "§b[§aWarrior§4+§b]")
 						{
-							$player->getInventory()->setContents(array(Item::get(0, 0, 0)));
+							/*$player->getInventory()->setContents(array(Item::get(0, 0, 0)));
 							$player->getInventory()->setHelmet(Item::get(Item::GOLD_HELMET));
 							$player->getInventory()->setChestplate(Item::get(Item::GOLD_CHESTPLATE));
 							$player->getInventory()->setLeggings(Item::get(Item::GOLD_LEGGINGS));
 							$player->getInventory()->setBoots(Item::get(Item::GOLD_BOOTS));
 							$player->getInventory()->setItem(0, Item::get(Item::DIAMOND_AXE, 0, 1));
-							$player->getInventory()->setHotbarSlotIndex(0, 0);
+							$player->getInventory()->setHotbarSlotIndex(0, 0);*/
 						}
 					}
 					else
 					{
-						$player->sendMessage($this->prefix . "You can't join");
+						$player->sendMessage($this->prefix . "Nu poti intra momentan.");
 					}
 				}
 			}
@@ -602,7 +602,7 @@ class GameSender extends PluginTask {
 								$timeToStart--;
 								foreach($playersArena as $pl)
 								{
-									$pl->sendPopup("§e< " . TextFormat::GREEN . $timeToStart . " seconds to start§e >");
+									$pl->sendMessage("§e> Incepe in " . TextFormat::GREEN . $timeToStart . " secunde");
 								}
                                                                 if($timeToStart==19)
                                                                 {
@@ -613,7 +613,7 @@ class GameSender extends PluginTask {
 								{
 									foreach($playersArena as $pl)
                                                                         {
-													                        $pl->getInventory()->setContents(array(Item::get(0, 0, 0)));
+													                        /*$pl->getInventory()->setContents(array(Item::get(0, 0, 0)));
 							                                                $pl->getInventory()->setHelmet(Item::get(Item::DIAMOND_HELMET));
 							                                                $pl->getInventory()->setChestplate(Item::get(Item::DIAMOND_CHESTPLATE));
 							                                                $pl->getInventory()->setLeggings(Item::get(Item::DIAMOND_LEGGINGS));
@@ -624,7 +624,7 @@ class GameSender extends PluginTask {
 		                                                                    $pl->getInventory()->addItem(Item::get(ITEM::GOLDEN_APPLE, 0, 20));
 							                                                $pl->getInventory()->addItem(Item::get(ITEM::BOW, 0, 1));
 							                                                $pl->getInventory()->addItem(Item::get(ITEM::ARROW, 0, 64));
-		                                                                    $pl->getInventory()->setHotbarSlotIndex(0, 0);						
+		                                                                    $pl->getInventory()->setHotbarSlotIndex(0, 0);*/						
                                                                         }
 								}
 								$config->set($arena . "StartTime", $timeToStart);
@@ -650,7 +650,7 @@ class GameSender extends PluginTask {
                                                                                     {
 										foreach($this->plugin->getServer()->getOnlinePlayers() as $plpl)
 										{
-											$plpl->sendMessage($this->prefix . "§l§c[RED] §l§bTeam is the Winner in the map §a" . $arena);
+											$plpl->sendMessage($this->prefix . "§l§c[RED] §l§bTeam-ul este castigator in mapa §a" . $arena);
 										}
 										$pl->getInventory()->clearAll();
 										$pl->removeAllEffects();
@@ -673,7 +673,7 @@ class GameSender extends PluginTask {
                                                                                     {
 										foreach($this->plugin->getServer()->getOnlinePlayers() as $plpl)
 										{
-											$plpl->sendMessage($this->prefix . "§l§9[BLUE] §l§bTeam is the Winner in the map §a" . $arena);
+											$plpl->sendMessage($this->prefix . "§l§9[BLUE] §l§bTeam-ul este castigator in mapa §a" . $arena);
 										}
 										$pl->getInventory()->clearAll();
 										$pl->removeAllEffects();
@@ -696,7 +696,7 @@ class GameSender extends PluginTask {
                                                                                     {
 										foreach($this->plugin->getServer()->getOnlinePlayers() as $plpl)
 										{
-											$plpl->sendMessage($this->prefix . "§l§a[GREEN] §l§bTeam is the Winner in the map §a" . $arena);
+											$plpl->sendMessage($this->prefix . "§l§a[GREEN] §l§bTeam-ul este castigator in mapa §a" . $arena);
 										}
 										$pl->getInventory()->clearAll();
 										$pl->removeAllEffects();
@@ -738,26 +738,29 @@ class GameSender extends PluginTask {
 									foreach($playersArena as $pl)
 									{
 										$pl->sendMessage("§e>--------------------------------");
-                                                                                $pl->sendMessage("§e>§cThe game is starting!");
+										$pl->sendMessage("§e>§cAtentie: §6Jocul a inceput!");
+                                                                                $pl->sendMessage("§e>§bJocul tine §a10 minute.");
+										$pl->sendMessage("§e>§bAi 30 secunde invincibilitate, dupa aceea te poti lupta.");
                                                                                 $pl->sendMessage("§e>--------------------------------");
 									}
 								}
-								if($time == 580)
+								/*if($time == 580)
 								{
 									foreach($playersArena as $pl)
 									{
 										$pl->sendMessage("§e>--------------------------------");
-                                                                                $pl->sendMessage("§e>§cAttention: §6The game has started!");
-                                                                                $pl->sendMessage("§e>§bYou have §a10 minutes to play");
+                                                                                $pl->sendMessage("§e>§cAtentie: §6Jocul a inceput!");
+                                                                                $pl->sendMessage("§e>§bJocul tine §a10 minute.");
+										$pl->sendMessage("§e>§bAi 30 secunde invincibilitate, dupa aceea te poti lupta.");
                                                                                 $pl->sendMessage("§e>--------------------------------");
 									}
-								}
-                                                                if($time == 450)
+								}*/
+                                                                if($time == 300)
 								{
 									foreach($playersArena as $pl)
 									{
 										$pl->sendMessage("§e>§e--------------------------------");
-                                                                                $pl->sendMessage("§e>§bPlugin made by JericMinesDiamond");
+                                                                                $pl->sendMessage("§e>§bAu mai ramas 5 minute!");
                                                                                 $pl->sendMessage("§e>§e--------------------------------");
 									}
 								}
@@ -773,14 +776,14 @@ class GameSender extends PluginTask {
 									{
 										foreach($playersArena as $pl)
 										{
-											$pl->sendMessage($this->prefix . $minutes . " minutes remaining");
+											$pl->sendMessage($this->prefix . $minutes . " minute ramase");
 										}
 									}
 									else if($time == 30 || $time == 15 || $time == 10 || $time ==5 || $time ==4 || $time ==3 || $time ==2 || $time ==1)
 									{
 										foreach($playersArena as $pl)
 										{
-											$pl->sendMessage($this->prefix . $time . " seconds remaining");
+											$pl->sendMessage($this->prefix . $time . " secunde ramase");
 										}
 									}
 									if($time <= 0)
@@ -790,7 +793,7 @@ class GameSender extends PluginTask {
 										foreach($playersArena as $pl)
 										{
 											$pl->teleport($spawn,0,0);
-											$pl->sendMessage($this->prefix . "No winners in the map §a" . $arena);
+											$pl->sendMessage($this->prefix . "Nici un castigator in mapa §a" . $arena);
 											$pl->getInventory()->clearAll();
                                                                                         $pl->setHealth(20);
                                                                                         $pl->setNameTag($pl->getName());
@@ -810,7 +813,7 @@ class GameSender extends PluginTask {
 								{
 									foreach($this->plugin->getServer()->getOnlinePlayers() as $plpl)
 									{
-										$plpl->sendMessage($this->prefix . $pl->getNameTag() . "§ehas won §6Team§eBuild§cUHC§f! §3Arena: §a" . $arena);
+										$plpl->sendMessage($this->prefix . $pl->getNameTag() . "§ea castigat! §3Arena: §a" . $arena);
 									}
 									$spawn = $this->plugin->getServer()->getDefaultLevel()->getSafeSpawn();
 									$this->plugin->getServer()->getDefaultLevel()->loadChunk($spawn->getX(), $spawn->getZ());
@@ -831,7 +834,7 @@ class GameSender extends PluginTask {
 							{
 								foreach($playersArena as $pl)
 								{
-									$pl->sendPopup(TextFormat::GREEN . "Need atleast 3 players to start.");
+									$pl->sendPopup(TextFormat::GREEN . "Trebuie cel putin 3 jucatori pentru a incepe jocul.");
 								}
 								$config->set($arena . "PlayTime", 600);
 								$config->set($arena . "StartTime", 20);
