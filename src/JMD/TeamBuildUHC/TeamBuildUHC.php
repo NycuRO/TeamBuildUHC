@@ -182,12 +182,11 @@ class TeamBuildUHC extends PluginBase implements Listener {
 			}
                         else{
                             $event->setCancelled(false);
-                        }
-			if($event->getBlock()->getID() == 20)
-			{
-				$event->setCancelled(true);
 			}
-
+		}
+		if($event->getBlock()->getID() == 20)
+		{
+			$event->setCancelled(true);
 		}
 	}
 	
@@ -747,19 +746,9 @@ class GameSender extends PluginTask {
                                                                                 $pl->sendMessage("§e>§bJocul tine §a10 minute.");
 										$pl->sendMessage("§e>§bAi 30 secunde invincibilitate, dupa aceea te poti lupta.");
                                                                                 $pl->sendMessage("§e>--------------------------------");
+										$pl->getInventory()->clearAll();
 									}
 								}
-								/*if($time == 580)
-								{
-									foreach($playersArena as $pl)
-									{
-										$pl->sendMessage("§e>--------------------------------");
-                                                                                $pl->sendMessage("§e>§cAtentie: §6Jocul a inceput!");
-                                                                                $pl->sendMessage("§e>§bJocul tine §a10 minute.");
-										$pl->sendMessage("§e>§bAi 30 secunde invincibilitate, dupa aceea te poti lupta.");
-                                                                                $pl->sendMessage("§e>--------------------------------");
-									}
-								}*/
                                                                 if($time == 300)
 								{
 									foreach($playersArena as $pl)
